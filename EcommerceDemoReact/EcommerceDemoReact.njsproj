@@ -32,6 +32,7 @@
     <Folder Include="public\" />
     <Folder Include="src\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\components\Cart\" />
     <Folder Include="src\components\Products\" />
     <Folder Include="src\components\UI\" />
     <Folder Include="src\containers\" />
@@ -52,6 +53,7 @@
     <Content Include="src\App.css" />
     <Content Include="src\App.js" />
     <Content Include="src\App.test.js" />
+    <Content Include="src\components\Cart\Cart.js" />
     <Content Include="src\components\Products\Products.js" />
     <Content Include="src\containers\Checkout\Checkout.js" />
     <Content Include="src\containers\Home\Home.js" />

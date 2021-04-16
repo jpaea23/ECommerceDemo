@@ -11,8 +11,10 @@ function Home()
 
     const [cart,setCart] = useContext(CartContext);
     const [products,setProducts] = useState([{}]);
-    const [size,setsize] = useState(4);
+    const size = 4;
     const [page,setPage] = useState(1);
+    const isPrevDisabled = (page === 1) ? true : false; 
+    const isNextDisabled = (products.length < size) ? true : false;
 
     const getProducts = async (pageSize, currentPage) => {
         try {
@@ -25,7 +27,7 @@ function Home()
    
     const AddProductToCart = async (productId) => {
         const cartId = cart.id;
-        const product = products.find(prod => prod.id == productId);
+        const product = products.find(prod => prod.id === productId);
 
         try
         {
@@ -35,7 +37,6 @@ function Home()
         } catch (error) {
             console.log(error);
         }
-       
     }
 
     const productsList = products.map((product,i) => {
@@ -48,13 +49,15 @@ function Home()
     })
 
     return (
-        <div className="row">
+        <div className="row m-2">
             {productsList}
             <div className="mx-auto">
-                <button className="btn btn-sm btn-dark mr-3">
+                <button disabled={isPrevDisabled} 
+                    className="btn btn-dark mr-3">
                     Prev
                 </button>
-                <button className="btn btn-sm btn-dark">
+                <button disabled={isNextDisabled}
+                    className="btn btn-dark">
                     Next
                 </button>
             </div>
