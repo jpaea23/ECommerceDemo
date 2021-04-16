@@ -1,7 +1,6 @@
-﻿using ECommerceDemoApi.Models;
-using ECommerceDemoApi.Services;
+﻿using ECommerceDemoApi.Interfaces;
+using ECommerceDemoApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 namespace ECommerceDemoApi.Controllers
 {
@@ -9,9 +8,9 @@ namespace ECommerceDemoApi.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
-        private IService<Product> _service;
+        private IProduct _service;
 
-        public ProductController(IService<Product> service)
+        public ProductController(IProduct service)
         {
             _service = service;
         }

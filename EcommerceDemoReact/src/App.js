@@ -1,14 +1,19 @@
-import Home from './containers/Home/Home';
 import Layout from './hoc/Layout/Layout';
-import { Router, Route, Switch} from 'react-router';
+import Home from './containers/Home/Home';
 import Checkout from './containers/Checkout/Checkout';
+import { Route, Switch } from 'react-router';
+import  { CartProvider } from './hoc/Context/CartContext';
 
 function App() {
   return (
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/checkout" component={Checkout} />
-    </Switch>
+    <CartProvider>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/checkout" component={Checkout} />
+        </Switch>
+      </Layout>
+    </CartProvider>
   );
 }
 

@@ -1,11 +1,11 @@
-﻿using ECommerceDemoApi.Models;
-using ECommerceDemoApi.Services;
+﻿using ECommerceDemoApi.Interfaces;
+using ECommerceDemoApi.Models;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ECommerceDemoApi.AppData.SeedData
 {
-    public class ProductSeed : IService<Product>
+    public class ProductSeed : IProduct
     {
         // TODO: Remove this
         private static List<Product> Products = new List<Product>()

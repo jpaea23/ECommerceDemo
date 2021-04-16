@@ -35,8 +35,10 @@
     <Folder Include="src\components\Products\" />
     <Folder Include="src\components\UI\" />
     <Folder Include="src\containers\" />
+    <Folder Include="src\containers\Checkout\" />
     <Folder Include="src\containers\Home\" />
     <Folder Include="src\hoc\" />
+    <Folder Include="src\hoc\Context\" />
     <Folder Include="src\hoc\Layout\" />
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +53,9 @@
     <Content Include="src\App.js" />
     <Content Include="src\App.test.js" />
     <Content Include="src\components\Products\Products.js" />
+    <Content Include="src\containers\Checkout\Checkout.js" />
     <Content Include="src\containers\Home\Home.js" />
+    <Content Include="src\hoc\Context\CartContext.js" />
     <Content Include="src\hoc\Layout\Layout.js" />
     <Content Include="src\index.css" />
     <Content Include="src\index.js" />

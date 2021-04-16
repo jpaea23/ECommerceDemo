@@ -5,14 +5,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import Layout from './hoc/Layout/Layout';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Layout>
         <App />
-      </Layout>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

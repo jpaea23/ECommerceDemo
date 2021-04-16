@@ -1,19 +1,11 @@
 using ECommerceDemoApi.AppData.SeedData;
-using ECommerceDemoApi.Models;
-using ECommerceDemoApi.Services;
+using ECommerceDemoApi.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ECommerceDemoApi
 {
@@ -35,12 +27,15 @@ namespace ECommerceDemoApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ECommerceDemoApi", Version = "v1" });
             });
-            services.AddScoped<IService<Product>, ProductSeed>();
+            services.AddScoped<IProduct, ProductSeed>();
+            services.AddScoped<ICart, CartSeed>();
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000");
+                    builder.WithOrigins("http://localhost:3000")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
                 });
             });
         }
