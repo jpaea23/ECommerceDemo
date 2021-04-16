@@ -6,7 +6,7 @@ const Products = (props) =>
         <div className="col-6 col-md-3 p-2 m-0">
             <div className="border">
                 <div className="text-center">
-                 <img className="img-fluid mx-auto border w-50 rounded" src="https://cdn1.vectorstock.com/i/thumb-large/46/50/missing-picture-page-for-website-design-or-mobile-vector-27814650.jpg"/>
+                 <img alt="product.jpg" className="img-fluid mx-auto border w-50 rounded" src="https://cdn1.vectorstock.com/i/thumb-large/46/50/missing-picture-page-for-website-design-or-mobile-vector-27814650.jpg"/>
                 </div>
                 <div className="m-2 w-75 mx-auto">
                     <div className="d-flex justify-content-between">
