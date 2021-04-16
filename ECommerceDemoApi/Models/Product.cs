@@ -9,7 +9,7 @@ namespace ECommerceDemoApi.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please provide a name for your product")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Please provide a product cost")]
-        public decimal Cost { get; set; }
+        public double Cost { get; set; }
         public string Description { get; set; }
     }
 }
