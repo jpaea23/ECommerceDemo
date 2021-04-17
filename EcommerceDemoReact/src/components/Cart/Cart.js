@@ -6,6 +6,7 @@ const Cart = (props) => {
             <td>{props.name}</td>
             <td>{props.description}</td>
             <td>${props.cost}</td>
+            <td><button className="btn btn-sm text-primary" onClick={() => props.delete(props.id)}>Delete</button></td>
         </tr>
     );
 }

@@ -25,9 +25,7 @@ namespace ECommerceDemoApi.Controllers
         public ActionResult<Product> Post(Product product)
         {
             if (ModelState.IsValid)
-            {
                 return _service.Add(product);
-            }
             else
                 return BadRequest();
             

@@ -27,7 +27,7 @@ const Layout = (props) => {
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark justify-content-between sticky-top">
                     <Link to="/" className="navbar-brand">Products Shop</Link>
                     <Link to="/checkout" className="btn btn-sm btn-light">
-                        Cart <span className="badge badge-primary">{count}</span>
+                        CART <span className="badge badge-primary">{count}</span>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navData" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

@@ -10,19 +10,8 @@ namespace ECommerceDemoApi.AppData.SeedData
         private static List<Cart> carts = new List<Cart>();
         private static int idCount = 0;
 
-        public Cart AddProduct(int id, Product product)
-        {
-            Cart cart = GetSingle(id);
-            cart.Products.Add(product);
-            cart.Total = CalculateProducts(cart);
-            cart.Shipping = (cart.Total < 50) ? 10 : 20;
-
-            return cart;
-        }
-
         public Cart Get()
         {
-            // TODO: Add logic to maintain user Cart instance if related User previously had an existing cart available
             Cart cart = new Cart();
             cart.ID = idCount;
             cart.Products = new List<Product>();
@@ -32,14 +21,26 @@ namespace ECommerceDemoApi.AppData.SeedData
             return cart;
         }
 
-        public Cart GetSingle(int id)
+        public double GetShippingCost(Cart cart)
+        {
+            if (cart.Products.Count == 0)
+                return 0;
+            else
+            {
+                double sumOfCosts = cart.Products.Select(x => x.Cost).Sum();
+                return (sumOfCosts <= 50) ? 10 : 20;
+            }
+        }
+
+        public void PlaceOrder(Cart cart)
+        {
+            carts.Add(cart);
+        }
+
+        private Cart GetSingle(int id)
         {
             return carts.FirstOrDefault(cartId => cartId.ID == id);
         }
-
-        private double CalculateProducts(Cart cart)
-        {
-           return cart.Products.Select(product => product.Cost).Sum();
-        }
+       
     }
 }

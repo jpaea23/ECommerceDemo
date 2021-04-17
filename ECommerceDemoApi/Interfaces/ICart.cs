@@ -9,6 +9,7 @@ namespace ECommerceDemoApi.Interfaces
     public interface ICart
     {
         Cart Get();
-        Cart AddProduct(int id, Product product);
+        double GetShippingCost(Cart cart);
+        void PlaceOrder(Cart cart);
     }
 }

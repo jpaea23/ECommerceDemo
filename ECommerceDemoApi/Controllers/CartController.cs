@@ -22,25 +22,24 @@ namespace ECommerceDemoApi.Controllers
         {
             Cart cart = _service.Get();
             if (cart != null)
-            {
                 return Ok(cart);
-            }
             else
                 return BadRequest();
         }
 
         [HttpPost]
-        public ActionResult<Cart> Post(int id, [FromBody]Product product)
+        [Route("ShippingCost")]
+        public ActionResult<double> GetshippingCost([FromBody]Cart cart)
         {
-            Product addProduct = new Product
-            {
-                ID = product.ID,
-                Name = product.Name,
-                Description = product.Description,
-                Cost = product.Cost
-            };
+            return Ok(_service.GetShippingCost(cart));
+        }
 
-            return Ok(_service.AddProduct(id, addProduct));
+        [HttpPost]
+        [Route("PlaceOrder")]
+        public ActionResult PlaceOrder([FromBody] Cart cart)
+        {
+            _service.PlaceOrder(cart);
+            return Ok();
         }
     }
 }

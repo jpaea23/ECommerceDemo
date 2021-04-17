@@ -33,8 +33,8 @@
     <Folder Include="src\" />
     <Folder Include="src\components\" />
     <Folder Include="src\components\Cart\" />
+    <Folder Include="src\components\Confirmation\" />
     <Folder Include="src\components\Products\" />
-    <Folder Include="src\components\UI\" />
     <Folder Include="src\containers\" />
     <Folder Include="src\containers\Checkout\" />
     <Folder Include="src\containers\Home\" />
@@ -54,8 +54,10 @@
     <Content Include="src\App.js" />
     <Content Include="src\App.test.js" />
     <Content Include="src\components\Cart\Cart.js" />
+    <Content Include="src\components\Confirmation\Confirmation.js" />
     <Content Include="src\components\Products\Products.js" />
     <Content Include="src\containers\Checkout\Checkout.js" />
+    <Content Include="src\containers\Checkout\Index.js" />
     <Content Include="src\containers\Home\Home.js" />
     <Content Include="src\hoc\Context\CartContext.js" />
     <Content Include="src\hoc\Layout\Layout.js" />

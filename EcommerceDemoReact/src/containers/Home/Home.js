@@ -25,18 +25,14 @@ function Home()
         }
     }
    
-    const AddProductToCart = async (productId) => {
-        const cartId = cart.id;
-        const product = products.find(prod => prod.id === productId);
-
-        try
-        {
-            const response = await axios.post(`https://localhost:44397/api/Cart?id=${cartId}`, product)
-            setCart(response.data);
-            
-        } catch (error) {
-            console.log(error);
-        }
+    const AddProductToCart = (productId) => {
+        const product = products.find(x => x.id === productId);
+        const currProducts = cart.products;
+        currProducts.push(product);
+        setCart({
+            ...cart,
+            products : currProducts
+        });
     }
 
     const productsList = products.map((product,i) => {
